@@ -1,26 +1,23 @@
-
-string = "1. woman Woman 2. man Man 3. she She 4. he He 5. Lady lady 6. Lord lord 7. mother Mother 8. father Father"
-
-
-puts "1. " + string
+string = IO.read("chapter7.txt")
 
 string.gsub!(/(\bwoman\b|\bman\b)/, "woman" => "man", "man" => "woman")
 string.gsub!(/(\bWoman\b|\bMan\b)/, "Woman" => "Man", "Man" => "Woman")
 
-puts "2. " + string
-
 string.gsub!(/(\bshe\b|\bhe\b)/, "she" => "he", "he" => "she")
 string.gsub!(/(\bShe\b|\bHe\b)/, "She" => "He", "He" => "She")
 
-puts "3. " + string
+string.gsub!(/(\bLord\b|\bLady\b)/, "Lady" => "Lord", "Lord" => "Lady")
+string.gsub!(/(\blord\b|\blady\b)/, "lady" => "lord", "lord" => "lady")
 
-string.gsub!(/(Lord|Lady)/, "Lady" => "Lord", "Lord" => "Lady")
-string.gsub!(/(lord|lady)/, "lady" => "lord", "lord" => "lady")
+string.gsub!(/(\bmother\b|\bfather\b)/, "mother" => "father", "father" => "mother")
+string.gsub!(/(\bMother\b|\bFather\b)/, "Mother" => "Father", "Father" => "Mother")
 
-puts "4. " + string
+string.gsub!(/(\bhim\b|\bher\b|\bhis\b)/, "him" => "her", "her" => "him/his", "his" => "her/s")
+string.gsub!(/(\bHim\b|\bHer\b|\bHis\b)/, "Him" => "Her", "Her" => "Him/His", "His" => "Her/s")
 
-string.gsub!(/(mother|father)/, "mother" => "father", "father" => "mother")
-string.gsub!(/(Mother|Father)/, "Mother" => "Father", "Mother" => "Father")
+string.gsub!(/(\bhusband\b|\bwife\b)/, "husband" => "wife", "wife" => "husband")
+string.gsub!(/(\bHusband\b|\bWife\b)/, "Husband" => "Wife", "Wife" => "Husband")
 
-puts "5. " + string
+puts string
 
+#to add: boy/girl, grandfather/mother, aunt/uncle
