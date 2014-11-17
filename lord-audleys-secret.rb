@@ -1,4 +1,4 @@
-string = IO.read("chapter7.txt")
+#string = IO.read("chapter7.txt")
 
 string.gsub!(/(\bwoman\b|\bman\b)/, "woman" => "man", "man" => "woman")
 string.gsub!(/(\bWoman\b|\bMan\b)/, "Woman" => "Man", "Man" => "Woman")
@@ -20,4 +20,4 @@ string.gsub!(/(\bHusband\b|\bWife\b)/, "Husband" => "Wife", "Wife" => "Husband")
 
 puts string
 
-#to add: boy/girl, grandfather/mother, aunt/uncle
+#to add: boy/girl, grandfather/mother, aunt/uncle, Mr./Mrs./Miss
