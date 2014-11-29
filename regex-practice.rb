@@ -13,4 +13,6 @@ search_term = longest(substring)
 
 tweet = @client.search(search_term, result_type: "popular").first.text
 
-puts test_string.gsub(/(["'])(?:(?=(\\?))\2.)*?\1/, "\"#{tweet.delete("\n")}\"")
+#puts test_string.gsub(/(["'])(?:(?=(\\?))\2.)*?\1/, "\"#{tweet.delete("\n")}\"")
+
+split_test = test_string.split(/(["'])(?:(?=(\\?))\2.)*?\1/)
