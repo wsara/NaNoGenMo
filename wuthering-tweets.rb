@@ -10,7 +10,7 @@ def find_tweet(substring)
 		end
 		search_term.delete!("\n")
 		sleep(0.01)
-		tweet = @client.search(search_term, result_type: "popular").first
+		tweet = @client.search(search_term, lang: "en", result_type: "popular").first
 		if tweet.nil? == false
 			puts "search term: " + search_term
 			puts "tweet: " + tweet.text + "\n\n"
@@ -20,13 +20,13 @@ def find_tweet(substring)
 	end
 	if words.empty?
 		sleep(0.01)
-		tweet = @client.search("twitter", result_type: "popular").first.text
+		tweet = @client.search("twitter", lang: "en", result_type: "popular").first.text
 		puts "tweet: " + tweet + "\n\n"
 		return tweet
 	end
 end
 
-string = IO.read("whales.txt")
+string = IO.read("second-variety.txt")
 re = /(["])(?:(?=(\\?))\2.)*?\1/m
 final = ""
 md = re.match(string)
@@ -44,7 +44,7 @@ loop do
 	end
 end
 
-puts "\n\n Final Result:"
+puts "\n Final Result:"
 puts final
 
 
