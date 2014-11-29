@@ -1,4 +1,4 @@
-#string = IO.read("chapter7.txt")
+string = IO.read("chapter7.txt")
 
 string.gsub!(/(\bwoman\b|\bman\b)/, "woman" => "man", "man" => "woman")
 string.gsub!(/(\bWoman\b|\bMan\b)/, "Woman" => "Man", "Man" => "Woman")
