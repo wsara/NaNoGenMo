@@ -1,5 +1,7 @@
+puts Dir.pwd
+
 require 'twitter'
-load 'twitter_config.rb'
+require_relative '../twitter_config.rb'
 
 def find_tweet(substring)
 	words = substring.split(" ").sort_by { |word| word.length }
@@ -26,7 +28,7 @@ def find_tweet(substring)
 	end
 end
 
-string = IO.read("second-variety.txt")
+string = IO.read("../Input/second-variety.txt")
 re = /(["])(?:(?=(\\?))\2.)*?\1/m
 final = ""
 md = re.match(string)
