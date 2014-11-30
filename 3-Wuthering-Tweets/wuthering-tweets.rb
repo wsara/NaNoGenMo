@@ -28,7 +28,7 @@ def find_tweet(substring)
 	end
 end
 
-string = IO.read("../Input/whales.txt")
+string = IO.read("../Input/moby-dick-complete.txt")
 re = /(["])(?:(?=(\\?))\2.)*?\1/m
 final = ""
 md = re.match(string)
